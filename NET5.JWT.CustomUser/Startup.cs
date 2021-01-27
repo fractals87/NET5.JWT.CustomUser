@@ -79,6 +79,7 @@ namespace NET5.JWT.CustomUser
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "NET5.JWT.CustomUser v1"));
 
+                context.Database.EnsureCreated();
                 SeedDb.Initialize(context).Wait();
             }
 

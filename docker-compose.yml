@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  net5.jwt.customuser:
+    image: ${DOCKER_REGISTRY-}net5jwtcustomuser
+    build:
+      context: .
+      dockerfile: NET5.JWT.CustomUser/Dockerfile
+  db:
+    image: "mcr.microsoft.com/mssql/server:2017-latest"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password1!
+    ports:
+      - 1433:1433

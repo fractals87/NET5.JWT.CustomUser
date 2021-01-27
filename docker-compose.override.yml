@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  net5.jwt.customuser:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
